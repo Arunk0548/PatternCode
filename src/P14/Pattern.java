@@ -5,16 +5,16 @@ public class Pattern {
 		System.out.println("Enter an integer number n [where N>=1, N<=100]");
 		Scanner s = new Scanner(System.in);
 		int inputNum = Integer.parseInt(s.nextLine());
-		int tempNum = 1;
-		while(inputNum>0)
+		int num = 1;
+		while(num<=inputNum)
 		{
-			for(int index =0; index<inputNum - 1;index++)
-			System.out.print("  ");
 			char printChar = '*';
-			for(int index = 1;index<tempNum ;index++)
+			for(int index = 1;index<(inputNum - num) * 2 + 1 ;index++)
 			System.out.print(printChar + " ");
 			System.out.println(printChar);
-			tempNum+=2;
-			inputNum--;
+			for(int index =inputNum -num; index<inputNum && index > 0;index++)
+			System.out.print("  ");
+			num++;
 		}
 	}
+}

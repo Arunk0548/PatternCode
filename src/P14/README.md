@@ -5,11 +5,11 @@ Java Pattern Programs
 ~~~
 Take an integer input and draw the below pattern. Say for example drawn below pattern for input number 5.
 
-        1
-      1 2 3
-    1 2 3 4 5
-  1 2 3 4 5 6 7
-1 2 3 4 5 6 7 8 9
+* * * * * * * * *
+  * * * * * * *
+    * * * * *
+      * * *
+        *
 ~~~
 
 ~~~
@@ -20,18 +20,16 @@ public class Pattern {
 		System.out.println("Enter an integer number n [where N>=1, N<=100]");
 		Scanner s = new Scanner(System.in);
 		int inputNum = Integer.parseInt(s.nextLine());
-		int tempNum = 1;
-		while(inputNum>0)
+		int num = 1;
+		while(num<=inputNum)
 		{
-			for(int index =0; index<inputNum - 1;index++)
-			System.out.print("  ");
-			int printChar = 1;
-			for(;printChar<tempNum ;printChar++)
+			char printChar = '*';
+			for(int index = 1;index<(inputNum - num) * 2 + 1 ;index++)
 			System.out.print(printChar + " ");
 			System.out.println(printChar);
-			tempNum+=2;
-			printChar++;
-			inputNum--;
+			for(int index =inputNum -num; index<inputNum && index > 0;index++)
+			System.out.print("  ");
+			num++;
 		}
 	}
 }

@@ -8,13 +8,17 @@ public class Pattern {
 		int num = 0;
 		while(num<inputNum)
 		{
-			int printChar = 1;
-			for(;printChar<inputNum - num ;printChar++)
-			System.out.print(printChar + " ");
-			System.out.println(printChar);
-			for(int index =inputNum - num-1; index<inputNum && index > 0;index++)
-			System.out.print("  ");
+			for(int index = 0;index<num; index++)
+			System.out.print("* ");        
+			System.out.println("*");
 			num++;
+		}
+		while(num>1)
+		{
+			for(int index = 1;index<num-1; index++)
+			System.out.print("* ");        
+			System.out.println("*");
+			num--;
 		}
 	}
 }
